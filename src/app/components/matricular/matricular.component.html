@@ -1,0 +1,8 @@
+<div class="buy-container">
+  <label for="selectalumno" class="label">Alumno</label>
+  <select id="selectalumno" #selectalumno class="select">
+    <option value="" disabled selected>Selecciona un alumno</option>
+    <option *ngFor="let alumno of alumnos" [value]="alumno.idAlumno">{{alumno.nombre}} {{alumno.apellidos}}</option>
+  </select>
+  <button (click)="matricular()" class="btn btn-success">Matricular</button>
+</div>

@@ -1,0 +1,12 @@
+<h2>Alumnos</h2>
+<div class="card-container">
+  <div class="card" *ngFor="let alumno of alumnos">
+    <img *ngIf="alumno.imagen" [src]="alumno.imagen" class="card-img-top" [alt]="alumno.nombre">
+    <div class="card-body">
+      <h5 class="card-title">{{alumno.nombre}} {{alumno.apellidos}}</h5>
+      <p class="card-text">Curso: {{alumno.curso}}</p>
+      <p class="card-text">Email: {{alumno.email}}</p>
+      <a [routerLink]="['/detalles', alumno.idAlumno]" class="btn btn-primary">Detalles</a>
+    </div>
+  </div>
+</div>

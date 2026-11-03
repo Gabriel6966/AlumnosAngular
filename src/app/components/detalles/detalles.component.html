@@ -1,0 +1,15 @@
+<div class="card-container" *ngIf="alumno">
+  <div class="card" style="width: 18rem;">
+    <img *ngIf="alumno.imagen" [src]="alumno.imagen" class="card-img-top" [alt]="alumno.nombre">
+    <div class="card-body">
+      <h5 class="card-title">{{alumno.nombre}} {{alumno.apellidos}}</h5>
+      <p class="card-text">Curso: {{alumno.curso}}</p>
+      <p class="card-text">Email: {{alumno.email}}</p>
+    </div>
+  </div>
+  <div class="comentarios-container" *ngIf="observaciones.length > 0">
+    <h3>Observaciones</h3>
+    <div *ngFor="let obs of observaciones"><p>{{obs.observacion}}</p></div>
+  </div>
+  <p *ngIf="observaciones.length === 0">No hay observaciones para este alumno.</p>
+</div>

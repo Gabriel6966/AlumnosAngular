@@ -1,0 +1,14 @@
+<div class="perfil-container" *ngIf="perfil">
+  <h1 class="perfil-title">Hola, {{perfil.nombre}}</h1>
+  <h2 class="perfil-subtitle">Email: {{perfil.email}}</h2>
+  <div class="button-group">
+    <button (click)="historialMatricula()" class="btn btn-info">Historial</button>
+    <button (click)="matricular()" class="btn btn-success">Matricular alumno</button>
+  </div>
+  <div *ngIf="show" class="historial-container">
+    <h3 class="historial-title">Historial de matrículas</h3>
+    <ul class="historial-list"><li *ngFor="let mat of matriculas" class="historial-item">
+      ID MATRÍCULA: {{mat.idMatricula}}, ALUMNO: {{mat.idAlumno}}, FECHA: {{mat.fechaMatricula}}
+    </li></ul>
+  </div>
+</div>
